@@ -1,0 +1,185 @@
+div.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1600px;
+  min-width: 900px;
+  min-height: 100vh;
+}
+
+div.container div.details {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+div.container div.details > div:nth-child(1) {
+
+}
+
+div.container div.details > div:nth-child(2) {
+  margin: 5px 15px;
+}
+
+div.container div.details div.movie-image {
+  width: 256px;
+  height: 256px;
+  overflow: hidden;
+}
+
+div.container div.details div.movie-image img {
+  width: 256px;
+}
+
+div.container div.details div.movie-title {
+  position: relative;
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+div.container div.details div.movie-title span.categories {
+  font-size: 17px;
+  font-weight: normal;
+  font-style: italic;
+  height: 100%;
+  margin: 0 5px;
+}
+
+div.container div.details div.movie-title span.categories > span {
+  text-transform: lowercase;
+}
+
+div.container div.details div.movie-title span.categories > span:not(span:last-child):after {
+  content: ',';
+  margin-right: 4px;
+}
+
+div.container div.details div.movie-rate {
+  font-size: 90px;
+  font-weight: bold;
+  margin-left: 25px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+div.container div.details div.movie-rate:before {
+  content: "0 - 10";
+  position: absolute;
+  left: -35px;
+  top: 55px;
+  color: rgba(0, 0, 0, .5);
+  font-size: 18px;
+  transform: rotate(-90deg);
+}
+
+div.container div.details div.movie-rate div.movie-rate-count {
+  color: rgba(0, 0, 0, .5);
+  font-size: 18px;
+  position: absolute;
+  right: -45px;
+  top: 55px;
+  transform: rotate(90deg);
+}
+
+div.container div.details div.movie-description {
+  text-align: center;
+  width: 100%;
+  padding: 15px 50px;
+}
+
+div.container div.details div.price {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.container div.details div.price > div {
+  margin-top: 10px;
+}
+
+div.details-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #00000010;
+  margin-top: 25px;
+  min-height: 500px;
+  border-radius: 2px;
+}
+
+div.details-more > div.more-block {
+  background: #fff;
+  padding: 10px 15px;
+  min-height: 200px;
+  width: 50%;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.details-more > div.more-block div.more-row {
+  display: flex;
+  width: 100%;
+}
+
+div.details-more > div.more-block div.more-row div.left,
+div.details-more > div.more-block div.more-row div.right {
+  width: 50%;
+  height: 30px;
+  text-align: center;
+}
+
+div.details-more > div.more-block div.more-row div.left {
+  border-right: 1px #00000015 solid;
+  text-transform: uppercase;
+}
+
+div.details-more > div.more-block div.break {
+  margin: 10px 0;
+  width: 100%;
+}
+
+div.details-more > div.more-block div.big-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.details-more > div.more-block div.big-row div.title {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px #00000015 solid;
+  padding-bottom: 10px;
+}
+
+div.details-more > div.more-block div.big-row div.big-row-items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+div.details-more > div.more-block div.big-row div.big-row-items div.big-row-item {
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+  border-bottom: 1px #00000005 solid;
+}

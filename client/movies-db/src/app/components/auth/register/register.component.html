@@ -1,0 +1,39 @@
+<div class="container centered">
+    <div class="register-block">
+      <div class="header">
+        Register form
+      </div>
+  
+      <form (submit)="register()" [formGroup]="myForm">
+        <div class="form-item">
+            <label>Email</label>
+            <input [ngClass]="{'error': email.errors && email.touched, 'correct': email.valid}" type="email"
+                formControlName="email">
+        </div>
+
+        <div class="form-item">
+            <label>Username</label>
+            <input [ngClass]="{'error': username.errors && username.touched, 'correct': username.valid}" type="text"
+                formControlName="username">
+        </div>
+
+        <div class="form-item">
+            <label>Password</label>
+            <input [ngClass]="{'error': password.errors && password.touched, 'correct': password.valid}" type="password"
+                formControlName="password">
+        </div>
+  
+        <button hidden type="submit"></button>
+      </form>
+  
+      <div class="controls">
+        <button class="blue-bg" (click)="register()">Register</button>
+      </div>
+  
+      <div class="alert-position">
+        <div class="alert" *ngIf="registrationFailed">
+          <p>{{errorMsg}}</p>
+        </div>
+      </div>
+    </div>
+</div>

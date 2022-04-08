@@ -1,0 +1,63 @@
+div.menu {
+  width: calc(100% - 50px);
+  height: 128px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 25px;
+}
+
+div.menu div.menu-logo,
+div.menu div.menu-logo img {
+  width: 256px;
+}
+
+div.menu div.menu-list {
+  width: calc(100% - 260px);
+}
+
+div.menu div.menu-list ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 24px;
+}
+
+
+div.menu div.menu-list ul li a {
+  display: block;
+  height: 100%;
+  font-style: normal;
+  padding: 5px 25px;
+
+}
+
+div.menu div.menu-list ul li:hover {
+
+}
+
+div.menu div.menu-list ul li:hover a {
+
+}
+
+
+.options-list {
+  position: relative;
+  margin-left: 10px;
+}
+
+.options-list > #options{
+  position: absolute;
+  font-size: 16px;
+  top: 30px;
+  left: 0;
+  display: none;
+}
+
+.options-list:hover > #options {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,58 @@
+div.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1600px;
+  min-width: 900px;
+  min-height: 100vh;
+  margin-bottom: 5px;
+}
+
+div.container > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+table.cart {
+  width: calc(90% - 300px);
+  min-width: 500px;
+  border-radius: 3px;
+  background: #00000015;
+}
+
+table.cart thead tr {
+  background: #00000065;
+  color: #fff;
+}
+
+table.cart tr > th {
+  font-size: 21px;
+  border-radius: 2px;
+}
+table.cart tr > th:nth-child(2) {
+  width: 10%;
+}
+table.cart tr > th:nth-child(3) {
+  width: 10%;
+}
+table.cart tr > td {
+  text-align: center;
+}
+
+div.summary {
+  width: 300px;
+  background: #00000015;
+  min-height: 200px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.summary p {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px 0;
+}

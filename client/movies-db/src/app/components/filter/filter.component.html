@@ -1,0 +1,31 @@
+<div *ngIf="loaded" class="filter">
+  <form [formGroup]="filterForm" novalidate (ngSubmit)="filter(filterForm.value)">
+    <div>
+      <div>
+        <label>Min price:</label>
+        <input type="number" formControlName="minPrice" (blur)="filter(filterForm.value)">
+      </div>
+      <div>
+        <label>Max price:</label>
+        <input type="number" formControlName="maxPrice" (blur)="filter(filterForm.value)">
+      </div>
+    </div>
+    <div>
+      <div>
+        <div formArrayName="categories" *ngFor="let category of categories.controls; let i = index">
+          <input id="{{validCategories[i]}}" type="checkbox" [formControlName]="i" (change)="filter(filterForm.value)"
+                 value="{{validCategories[i]}}">
+          <label for="{{validCategories[i]}}">
+            {{validCategories[i]}}
+          </label>
+        </div>
+      </div>
+      <!-- <label>category:</label>
+      <select formControlName="categories" multiple (change)="filter(filterForm.value)">
+          <option *ngFor="let category of validCategories" value="{{category}}"
+              (click)="filter(filterForm.value)">
+              {{category}}</option>
+      </select> -->
+    </div>
+  </form>
+</div>

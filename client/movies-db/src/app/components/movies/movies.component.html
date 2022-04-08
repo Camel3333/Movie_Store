@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>News</h1>
+  <ul *ngIf="newsLoaded" class="news-container">
+    <li *ngFor="let message of news" class="news-block">
+      <div class="news-title">{{message.title}}</div>
+      <div class="news-date-from">{{message.timestamp | date: 'dd/MM/yyyy' }} - <strong>MStore Worker</strong></div>
+      <div class="news-message">{{message.message}}</div>
+    </li>
+  </ul>
+  <div class="movies-list">
+    <div>
+      <h1>Latest movies</h1>
+      <app-filter (filtered)="onFiltered($event)"></app-filter>
+    </div>
+    <ul *ngIf="moviesLoaded">
+      <li *ngFor="let movie of movies">
+        <app-movie *ngIf="movie.units_available > 0" [movie]="movie"></app-movie>
+      </li>
+    </ul>
+    <div class="btn-blue" (click)="loadMovies()">Load more</div>
+    <h2 *ngIf="moviesLoaded && movies.length === 0">No movies found. Try different options.</h2>
+  </div>
+
+  <div *ngIf="showPopup" class="popup">
+    <p class="popup-msg">{{popupMsg}}</p>
+  </div>
+</div>

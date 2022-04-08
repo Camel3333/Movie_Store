@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="movie-title">
+    {{movie.title | uppercase}}
+  </div>
+  <div class="movie-container">
+    <div class="movie-image">
+      <img src="{{movie.image_src}}" alt="{{movie.title}}"/>
+    </div>
+    <div class="movie-info">
+      <div class="movie-description">
+        {{movie.description}}
+      </div>
+      <p><strong>Price:</strong> {{movie.price | currency}}</p>
+      <p><strong>Remaining tickets:</strong> {{movie.units_available}}</p>
+    </div>
+    <div class="movie-more">
+      <div class="btn-blue" (click)="onReadMore()">Read more</div>
+    </div>
+  </div>
+</div>

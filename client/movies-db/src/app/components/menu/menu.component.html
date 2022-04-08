@@ -1,0 +1,34 @@
+<div class="ph"></div>
+<div class="menu grid2">
+  <div class="menu-logo">
+    <a routerLink="/movies">
+      <img src="assets/logo.png" alt="MStore logo" />
+    </a>
+  </div>
+  <div class="menu-list">
+    <ul class="flex container">
+      <li><a routerLink="/movies">Movies</a></li>
+      <li *ngIf="!this.auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
+      <li *ngIf="!this.auth.isLoggedIn()"><a routerLink="/register">Register</a></li>
+      <li *ngIf="this.auth.isLoggedIn()">
+        <div class="user">
+          <h3>{{ this.auth.getEmail() }}</h3>
+        </div>
+      </li>
+      <li class="options-list" *ngIf="this.auth.isEmployee()">
+        Employee
+        <ul id="options">
+          <li><a routerLink="/new-movie">New Movie</a></li>
+          <li><a routerLink="/new-category">Categories</a></li>
+        </ul>
+      </li>
+      <li *ngIf="this.auth.isLoggedIn()">
+        <a routerLink="/cart">Cart</a>
+      </li>
+      <li *ngIf="this.auth.isLoggedIn()">
+        <a routerLink="/history">History</a>
+      </li>
+      <li *ngIf="this.auth.isLoggedIn()"><a href="" (click)="logout()">Sign out</a></li>
+    </ul>
+  </div>
+</div>

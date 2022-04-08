@@ -1,0 +1,28 @@
+<div *ngIf="loaded" class="options">
+    <div class="option">
+        <h1>Add Category</h1>
+        <form [formGroup]="categoryForm" novalidate>
+            <div class="form-item">
+                <label>Title</label>
+                <input type="text" formControlName="category">
+            </div>
+
+            <input type="submit" value="Add Category" (click)="submit()">
+        </form>
+    </div>
+    <div class="option">
+        <h1>Remove Category</h1>
+        <form [formGroup]="deleteForm">
+            <select formControlName="categories">
+                <option *ngFor="let category of validCategories" value="{{category}}">
+                    {{category}}</option>
+            </select>
+
+            <button (click)="deleteCategory()">Remove Category</button>
+        </form>
+    </div>
+
+    <div *ngIf="showPopup" class="popup">
+        <p class="popup-msg">{{popupMsg}}</p>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="details" *ngIf="loaded">
+    <div>
+      <div class="movie-image">
+        <img src="{{movie.image_src}}" alt="{{movie.title}} img" />
+      </div>
+    </div>
+    <div>
+      <div class="movie-title">
+        {{movie.title}} <span class="categories"><span
+            *ngFor="let category of movie.categories">{{category.name}}</span></span>
+
+        <div class="price">
+          $ {{movie.price}}
+          <div (click)="addToCart()" class="btn-blue" *ngIf="this.auth.isLoggedIn()">Add to cart</div>
+          <div class="btn-blue disabled" *ngIf="!this.auth.isLoggedIn()" disabled>Sign-in to buy</div>
+          {{movie.units_available}} tickets left
+        </div>
+
+      </div>
+      <div class="movie-rate">
+        {{movie.total_rates}}
+        <div class="movie-rate-count">
+          {{movie.user_ratings_count}} ocen
+        </div>
+      </div>
+      <div class="movie-description">
+        {{movie.description}}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="details-more" *ngIf="loaded">
+    <div class="more-block">
+      <div class="more-row">
+        <div class="left">
+          Length
+        </div>
+        <div class="right">
+          {{movie.length / 3600 | floor}}:{{(movie.length / 60) % 60 | floor | number:'2.0-0'}}:{{(movie.length) % 60 |
+          floor | number:'2.0-0'}}
+        </div>
+      </div>
+      <div class="more-row">
+        <div class="left">
+          Rate
+        </div>
+        <div class="right">
+          {{movie.total_rates}}
+        </div>
+      </div>
+      <div class="more-row">
+        <div class="left">
+          Number of ratings
+        </div>
+        <div class="right">
+          {{movie.user_ratings_count}}
+        </div>
+      </div>
+      <div class="more-row">
+        <div class="left">
+          Director
+        </div>
+        <div class="right">
+          {{movie.director.first_name}} {{movie.director.last_name}}
+        </div>
+      </div>
+      <div class="break"></div>
+      <div class="big-row">
+        <div class="title">Categories</div>
+        <div class="big-row-items">
+          <div class="big-row-item" *ngFor="let category of movie.categories">
+            {{category.name}}
+          </div>
+        </div>
+      </div>
+      <div class="break"></div>
+      <div class="big-row">
+        <div class="title">Actors</div>
+        <div class="big-row-items">
+          <div class="big-row-item" *ngFor="let actor of movie.main_actors">
+            {{actor.first_name }} {{actor.last_name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="showPopup" class="popup">
+    <p class="popup-msg">{{popupMsg}}</p>
+  </div>
+</div>

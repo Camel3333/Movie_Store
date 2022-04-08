@@ -1,0 +1,44 @@
+div.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1600px;
+  min-width: 900px;
+  min-height: 100vh;
+  margin-bottom: 5px;
+}
+div.container > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+table.history {
+  width: 100%;
+  min-width: 500px;
+  border-radius: 3px;
+  background: #00000015;
+}
+
+table.history thead tr {
+  background: #00000065;
+  color: #fff;
+}
+
+table.history tr > th {
+  font-size: 21px;
+  border-radius: 2px;
+}
+table.history tr > th:nth-child(2) {
+  width: 300px;
+}
+table.history tr > th:nth-child(3) {
+  width: 150px;
+}
+table.history tr > th:nth-child(4) {
+  width: 100px;
+}
+
+table.history tr > td {
+  text-align: center;
+}
+

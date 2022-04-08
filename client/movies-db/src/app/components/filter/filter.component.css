@@ -1,0 +1,98 @@
+div.filter {
+  width: 100%;
+}
+
+div.filter form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+div.filter form > div:nth-child(1) {
+  width: 50%;
+  min-width: 400px;
+  margin: 10px 0;
+}
+
+div.filter form > div:nth-child(1) > div {
+  margin: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.filter form > div:nth-child(1) > div label {
+  background-color: #ffffff;
+  background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 112px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: 1px #00000025 solid;
+
+}
+
+div.filter form > div:nth-child(1) > div input {
+  border: 1px #00000050 solid;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  line-height: 32px;
+  padding: 0;
+}
+
+div.filter form > div:nth-child(1) > div input:focus {
+  border: 1px rgba(0, 171, 255, 0.5) solid;
+  outline: none;
+}
+
+div.filter form > div:nth-child(2) {
+  position: relative;
+  width: 50%;
+  border: 1px #00000015 solid;
+  height: 100px;
+  padding: 10px;
+}
+
+div.filter form > div:nth-child(2):before {
+  position: absolute;
+  top: -12px;
+  right: 25px;
+  padding: 0 5px;
+  content: "Wybierz kategorie";
+  color: #00000050;
+  background: #fff;
+
+}
+
+div.filter form > div:nth-child(2) > div {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+div.filter form > div:nth-child(2) > div > div > label {
+  background: #fff;
+  width: 100%;
+  display: block;
+  color: #000;
+  transition: 200ms background-color, 200ms color;
+  padding: 5px 10px;
+}
+
+div.filter form > div:nth-child(2) > div > div > label:hover {
+  background: #00000010;
+}
+
+div.filter form > div:nth-child(2) > div > div > input {
+  display: none;
+}
+
+div.filter form > div:nth-child(2) > div > div > input[type=checkbox]:checked + label {
+  background-color: rgba(0, 171, 255, 0.5);
+}

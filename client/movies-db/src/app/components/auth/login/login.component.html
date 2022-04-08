@@ -1,0 +1,36 @@
+<div class="container centered">
+  <div class="login-block">
+    <div class="header">
+      Sign-In form
+    </div>
+
+    <form (submit)="login()" [formGroup]="myForm">
+      <div class="form-item">
+        <label>Email</label>
+        <input [ngClass]="{'error': email.errors && email.touched, 'correct': email.valid}" type="email"
+               formControlName="email">
+      </div>
+
+      <div class="form-item">
+        <label>Password</label>
+        <input [ngClass]="{'error': password.errors && password.touched, 'correct': password.valid}" type="password"
+               formControlName="password">
+      </div>
+
+      <button hidden type="submit"></button>
+    </form>
+
+    <div class="controls">
+      <button class="blue-bg" type="submit" (click)="login()">Sign in</button>
+    </div>
+
+    <div class="alert-position">
+      <div class="alert" *ngIf="loginFailed">
+        <p>{{errorMsg}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-links">
+    <a routerLink="/register">Or register a new account!</a>
+  </div>
+</div>
